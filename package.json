@@ -4,6 +4,7 @@
   "sideEffects": false,
   "version": "1.0.4",
   "scripts": {
+    "start": "npm run dev",
     "dev": "shopify hydrogen dev --codegen-unstable",
     "build": "shopify hydrogen build",
     "preview": "npm run build && shopify hydrogen preview",

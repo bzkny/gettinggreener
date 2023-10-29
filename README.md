@@ -39,7 +39,7 @@ npm run build
 ## Local development
 
 ```bash
-npm run dev
+npm start
 ```
 
 ---
