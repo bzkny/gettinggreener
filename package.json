@@ -10,7 +10,9 @@
     "lint": "eslint --no-error-on-unmatched-pattern --ext .js,.ts,.jsx,.tsx .",
     "format": "prettier --write --ignore-unknown .",
     "format:check": "prettier --check --ignore-unknown .",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "browserslist": [
     "defaults"
@@ -38,11 +40,21 @@
     "worktop": "^0.7.3"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.0",
     "@remix-run/dev": "1.17.1",
     "@remix-run/eslint-config": "1.17.1",
     "@shopify/eslint-plugin": "^42.0.1",
     "@shopify/oxygen-workers-types": "^3.17.2",
     "@shopify/prettier-config": "^1.1.2",
+    "@storybook/addon-essentials": "^8.1.11",
+    "@storybook/addon-interactions": "^8.1.11",
+    "@storybook/addon-links": "^8.1.11",
+    "@storybook/addon-onboarding": "^8.1.11",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.4",
+    "@storybook/blocks": "^8.1.11",
+    "@storybook/react": "^8.1.11",
+    "@storybook/react-webpack5": "^8.1.11",
+    "@storybook/test": "^8.1.11",
     "@tailwindcss/forms": "^0.5.3",
     "@tailwindcss/typography": "^0.5.9",
     "@types/eslint": "^8.4.10",
@@ -51,11 +63,13 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.20.0",
     "eslint-plugin-hydrogen": "0.12.2",
+    "eslint-plugin-storybook": "^0.8.0",
     "postcss": "^8.4.21",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^8.2.0",
     "prettier": "^2.8.4",
     "rimraf": "^3.0.2",
+    "storybook": "^8.1.11",
     "tailwindcss": "^3.3.0",
     "typescript": "^4.9.5"
   },
