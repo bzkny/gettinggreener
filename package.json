@@ -1,5 +1,5 @@
 {
-  "name": "demo-store",
+  "name": "@gg/react-components",
   "private": true,
   "sideEffects": false,
   "version": "1.0.4",
