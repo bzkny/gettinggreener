@@ -1,0 +1,44 @@
+$base: 4px;
+$sizes: (
+    "xs": 8px, //50 - related things
+    "s": 12px, //75 - x1 - related things
+    "m": 24px, //150 - x3 - unrelated things
+    "l": 28px, //175 - x1 - related things
+    "xl": 40px, //250 - x3 - unrelated things
+);
+$padding-s: calc($base x 4);
+$padding-m: calc($base x 8);
+
+
+@each $size-name, $size in $sizes {
+    
+    .#{$size-name} {
+        font-size: $size;
+    }
+
+}
+@each $size-name, $size in $sizes {
+    
+        :root {
+        --#{$size-name}: #{$size};
+    } 
+}
+
+/**
+* @tokens Sizes
+* @presenter Spacing
+*/
+$xs: 8px;
+$s: 12px;
+$m: 24px;
+$l: 28px;
+$xl: 40px;
+
+.xs {
+    font-size: $xs;
+}
+
+    /**
+    * @tokens-end
+    */
+

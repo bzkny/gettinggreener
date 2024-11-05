@@ -1,0 +1,83 @@
+/**
+* @tokens Colors
+* @presenter Color
+*/
+//TO DO : I DON'T THINK THIS IS ACTUALLY PRIMARY
+$color-primary: #003672; //dark blue or blue 1000
+//THIS IS PRIMARY
+$color-secondary: #0054A4; //brand blue or blue 800
+$color-tertiary: #2A73B8; //medium blue or blue 600
+$color-fourth: #90B4D7; //blue 200
+$color-blue-900: #00478B; //BLUE 900
+$color-blue-50: #cedeee; //BLUE 50
+
+
+$color-white: rgb(255,255,255);
+$color-black: rgb(0,0,0);
+
+//TEXT COLORS
+$color-text-primary: $color-primary;
+$color-text-secondary: $color-secondary;
+$color-text-tertiary: $color-tertiary;
+$color-text-disabled: $color-fourth;
+
+$color-text-primary-neutral: rgba($color-black, .95); //Black 950
+$color-text-secondary-neutral: rgba($color-black, .8); //Black 800
+$color-text-tertiary-neutral: rgba($color-black, .6); //Black 600
+$color-text-disabled-neutral: rgba($color-black, .3); //Black 300
+
+
+$color-white-800: rgba($color-white, .8); //White 800
+$color-white-400: rgba($color-white, .4); //White 400
+
+
+//COLOR ACTIONS
+//PRIMARY
+//BRAND
+$color-action-primary: $color-secondary;
+$color-action-secondary: $color-tertiary;
+$color-action-primary-hover: $color-blue-900;
+$color-action-primary-active: $color-primary;
+$color-action-primary-text: $color-white;
+
+$color-action-primary-inverse: $color-white;
+$color-action-primary-inverse-hover: $color-blue-50;
+$color-action-primary-inverse-active: #B1CAE4; //BLUE 100
+$color-action-primary-inverse-text: $color-blue-900;
+
+//COLOR ACTIONS
+//SECONDARY AS IN SECONDARY BUTTON
+//BRAND
+$color-action-secondary: none;
+$color-action-secondary-hover: #EDF2F8; //BLUE 0;
+$color-action-secondary-active: #B1CAE4; //BLUE 100
+$color-action-secondary-border: $color-secondary;
+$color-action-secondary-text: $color-secondary;
+$color-action-secondary-text-hover: $color-tertiary;
+$color-action-secondary-text-active: $color-blue-900;
+
+$color-action-secondary-inverse: none;
+$color-action-secondary-inverse-hover: rgba($color-white, .1); //White 100
+$color-action-secondary-inverse-active: rgba($color-white, .3); //White 300
+$color-action-secondary-inverse-border: $color-white;
+$color-action-secondary-inverse-text: $color-white;$color-action-secondary-inverse-text-hover: rgba($color-white, .7);
+$color-action-secondary-inverse-text-active: rgba($color-white, .95);
+
+
+
+
+
+$color-warning: #DC660B;
+$color-error: #BF1C00;
+$color-positive: #49A338;
+
+
+
+//TO DO : IS THIS OPACITY? 
+$color-text-disabled: $color-fourth;
+//TO DO : THIS IS DISABLED COLOR
+$color-border: $color-secondary;
+
+/**
+  * @tokens-end
+*/

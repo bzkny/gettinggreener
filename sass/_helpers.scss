@@ -1,0 +1,24 @@
+@use "palette";
+
+$opacity: .3;
+$opacity-active: .8;
+$opacity-hover: .6;
+
+
+//TO DO: DEFINE
+@function disabled($color: palette.$color-white) {
+    @return rgba($color, $opacity)
+};
+@function hover($color: palette.$color-white) {
+    @return rgba($color, $opacity)
+};
+@function active($color: palette.$color-white) {
+    @return rgba($color, $opacity)
+}
+
+.icon-error {
+    background: palette.$color-error;
+}
+.color-error {
+    background: palette.$color-error;
+}

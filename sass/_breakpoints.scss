@@ -1,0 +1,46 @@
+@use "sass:map";
+@use "sass:math";
+@use "typography";
+
+//BREAKPOINTS & MEDIA QUERIES
+//FROM DESIGN
+$design-breakpoints: (
+  "mobile-mini": 500px,
+  "mobile": 600px,
+  "tablet": 1084px,
+  "desktop": 1324px,
+  "large-desktop": 1576px
+);
+// $px-to-em-breakpoints: (
+//   "desktop": 83em, //1324 / 16 = 82.75em
+//   "tablet": 68em, //1084 / 16 = 67.75em
+//   "mobile": 38em //600 / 16 = 37.5em
+// );
+
+$code-breakpoints: ();
+//STRIP PX CONVERT TO EM FOR ALL USE CASES https://zellwk.com/blog/media-query-units/
+@each $media, $breakpoint in $design-breakpoints {
+  $temp-breakpoints: ();
+  // $temp-breakpoints: map-merge($temp-breakpoints, ($media: math.ceil(math.div($breakpoint, 16px)) + em));
+  $temp-breakpoints: map-merge($temp-breakpoints, ($media: math.ceil(math.div($breakpoint, typography.$base-font))));
+  $code-breakpoints: map-merge($code-breakpoints, $temp-breakpoints);
+}
+
+@mixin respond-to-($media) {
+  @if $media == mobile {
+    // max-width: 68em
+    @media all and (max-width: map.get($code-breakpoints,"mobile") + em) {
+      @content;
+    }
+  } @else if $media == tablet {
+    //max-width: 83em
+    @media all and (max-width: map.get($code-breakpoints,"tablet") + em) {
+      @content;
+    }
+  } @else if $media == desktop {
+    //min-width: 84em
+    @media all and (min-width: map.get($code-breakpoints,"desktop") + 1em) {
+      @content;
+    }
+  }
+}

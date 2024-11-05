@@ -1,0 +1,122 @@
+@use "sass:math";
+@use "sass:map";
+@use "breakpoints";
+
+$columns: 12 !default;
+
+// $em-breakpoints: (
+//   "desktop": "min-width: ",
+//   "tablet": "min-width: 68em",
+//   "mobile": "max-width: 39em"
+// );
+$breakpoint-col: (
+  "desktop": $columns,
+  "tablet": 6,
+  "mobile": 2
+);
+
+$tablet-fraction: math.div($columns, map-get($breakpoint-col, tablet));
+$mobile-fraction: math.div($columns, map-get($breakpoint-col, mobile));
+
+//THE GRID
+@mixin grid-sys($columns) {
+  display: grid;
+  grid-template-columns: repeat(#{$columns}, minmax(0, 1fr));
+  grid-template-rows: min-content;   
+  gap: 1rem;
+  //NEED FOR MASONRY LAYOUT
+  grid-auto-flow: row dense;
+}
+
+//GRID UTILITY CLASSES
+@mixin grid-util() {
+  /**
+        * @tokens Grid
+        * @presenter Spacing
+        */
+    
+  //FULL WIDTH
+  .col {
+    grid-column: 1 / calc(#{$columns} + 1);
+
+    @include breakpoints.respond-to-(tablet) {   
+      grid-column: 1 / map-get($breakpoint-col, tablet);
+    }
+
+    @include breakpoints.respond-to-(mobile) {   
+        grid-column: 1 / map-get($breakpoint-col, mobile);
+    }
+  }
+
+  .col-half {
+    grid-column: auto / span math.div(map-get($breakpoint-col, desktop), 2);
+    // grid-column-end: div(map-get($breakpoint-col, desktop), 2) + 1;
+
+    @include breakpoints.respond-to-(tablet) { 
+        grid-column: auto / span math.div(map-get($breakpoint-col, tablet), 2);
+    }
+
+    @include breakpoints.respond-to-(mobile) { 
+        grid-column: auto / span math.div(map-get($breakpoint-col, mobile), 2);
+    }
+  }
+
+  .col-third {
+    grid-column: auto / span math.div(map-get($breakpoint-col, desktop), 3);
+    // grid-column-end: div(map-get($breakpoint-col, desktop), 2) + 1;
+
+    @include breakpoints.respond-to-(tablet) { 
+        grid-column: auto / span math.round(math.div(map-get($breakpoint-col, tablet), 3));
+    }
+
+    @include breakpoints.respond-to-(mobile) { 
+        grid-column: auto / span math.round(math.div(map-get($breakpoint-col, mobile), 3));
+    }
+  }
+
+  @for $n from 1 through $columns {
+    
+    .col-start-#{$n} {
+        grid-column-start: $n;
+        
+        @if $n > 1 {
+          @include breakpoints.respond-to-(tablet) {
+              grid-column-start: math.ceil(math.div($n, $tablet-fraction));
+          }
+          @include breakpoints.respond-to-(mobile) {
+              grid-column-start: math.ceil(math.div($n, $mobile-fraction));
+          }
+        }
+    }
+    .col-end-#{$n} {
+      grid-column-end: $n + 1;
+
+      @if $n > 1 {
+        @include breakpoints.respond-to-(tablet) {
+          grid-column-end: math.ceil(math.div($n, $tablet-fraction)) + 1;
+        }
+        @include breakpoints.respond-to-(mobile) {
+          grid-column-end: math.ceil(math.div($n, $mobile-fraction)) + 1;
+        }
+      }
+    }
+  }
+
+  /**
+    * @tokens-end
+  */
+
+}
+@include grid-util();
+
+
+.grid-section {
+  @include grid-sys( map-get($breakpoint-col, desktop));
+  
+  @include breakpoints.respond-to-(tablet) {
+    @include grid-sys( map-get($breakpoint-col, tablet));
+  }
+  @include breakpoints.respond-to-(mobile) {
+    @include grid-sys( map-get($breakpoint-col, mobile));
+  }
+}

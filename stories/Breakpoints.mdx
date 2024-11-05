@@ -1,0 +1,52 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Tokens/Breakpoints" />
+<style>
+    {`
+    #usage {
+       margin-top: var(--m);
+    }
+    `}
+</style>
+
+# Breakpoints
+##
+<div className="sb-unstyled text-data grid-section">
+    <p className="text-data-heading col-third">Name</p>
+    <p className="text-data-heading col-third">Size (em for code)</p>
+    <p className="text-data-heading col-third">Size (px for design)</p>
+
+    <p className="col-third">Mobile</p>
+    <p className="col-third">Tablet</p>
+    <p className="col-third">Desktop</p>
+
+    <p className="col-third">&#x003C;68em</p>
+    <p className="col-third">68em</p>
+    <p className="col-third">&#x2265;83em</p>
+
+    <p className="col-third">&#x003C;1088px</p>
+    <p className="col-third">1088px - 1327</p>
+    <p className="col-third">&#x2265;1328px</p>
+</div>
+
+##
+
+### Usage
+Breakpoints are a mixin allowing @include to be dropped in as-needed into components. See the example below for a tablet specific mixin for a h1:
+
+```
+    h1 {
+    @include respond-to-(tablet) {
+        //ALSO .display-m
+        font-size: 6.75rem;
+    }
+}
+```
+
+##
+
+### Accessibility
+
+Breakpoints should be written in em for accessibility. It is the only unit that scale's according to a user's prescribed font-size (as set in their browser settings) and zoom settings so is optimal for vision impaired users who need larger font sizes. See: <a href="https://medium.com/zoosk-engineering/to-em-or-not-to-em-that-is-the-media-query-question-22f4a65e9747" target="_blank" title="2019 research demonstrates em is most accessible unit for breakpoints">2019 research</a> and <a href="https://zellwk.com/blog/media-query-units/" target="_blank" title="2016 research demonstrates em is most accessible unit for breakpoints"> 2016 research</a>.
+
+N.B. This em breakpoint will necessitate em/rem being used for padding, margins, font-sizes, and widths (where applicable). 

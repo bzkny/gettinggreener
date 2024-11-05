@@ -1,0 +1,65 @@
+import { DesignTokenDocBlock } from "storybook-design-token";
+import { Meta, Color } from "@storybook/blocks";
+
+<Meta title="Tokens/Colors/Backgrounds" />
+
+<style> 
+{`
+.card {
+    padding: 16px;
+    border-radius: 8px;
+}
+    `}
+</style>
+
+
+## Background Colors 
+## + Patterns
+
+#### SASS Color Tokens
+
+<DesignTokenDocBlock categoryName="ColorBG" maxHeight={600} viewType="table" />
+
+#### Primary
+
+<div className="grid-section">
+    <div className="col-half card color-background-primary">
+        <h5>Background Primary</h5>
+        <p>Add .color-background-primary to parent container</p>
+    </div>
+    <div className="col-half card color-background-primary-inverse">
+        <h5>Background Primary Inverse</h5>
+        <p>Add .color-background-primary-inverse to parent container</p>
+    </div>
+    <div className="col-half card color-background-secondary">
+        <h5>Background Secondary</h5>
+        <p>Add .color-background-secondary to parent container</p>
+    </div>
+
+    <div className="col-half card color-background-secondary-inverse">
+        <h5>Background Secondary Inverse</h5>
+        <p>Add .color-background-secondary-inverse to parent container</p>
+    </div>
+</div>
+
+#### Neutrals
+
+<div className="grid-section">
+    <div className="col-half card color-background-primary-neutral">
+        <h5>Background Primary Neutral</h5>
+        <p>Add .color-background-primary-neutral to parent container</p>
+    </div>
+    <div className="col-half card color-background-primary-neutral-inverse">
+        <h5>Background Primary Neutral Inverse</h5>
+        <p>Add .color-background-primary-neutral-inverse to parent container</p>
+    </div>
+    <div className="col-half card color-background-secondary-neutral">
+        <h5>Background Secondary Neutral</h5>
+        <p>Add .color-background-secondary-neutral to parent container</p>
+    </div>
+
+    <div className="col-half card color-background-secondary-neutral-inverse">
+        <h5>Background Secondary Neutral Inverse</h5>
+        <p>Add .color-background-secondary-neutral-inverse to parent container</p>
+    </div>
+</div>

@@ -1,0 +1,91 @@
+@use 'palette';
+/**
+* @tokens ColorBG
+* @presenter Color
+*/
+//BACKGROUND COLORS = 12
+$color-background-primary-neutral: #25272a; //Gray 1000 rgba(37, 39, 42)
+
+//TO DO : THIS SEEMS LIKE THE REVERSE OF THE INTENTION PRIMARY/SECONDARY
+$color-background-primary: palette.$color-secondary;
+
+//TO DO : THESE INTRODUCE 8 NEW COLORS - VALUE ADD?
+$color-background-secondary: palette.$color-blue-900;
+$color-background-tertiary: #032A54; //BLUE 1100
+$color-background-fourth: #EDF2F8; //BLUE 0
+
+$color-gray-0: #f8f8f8;
+$color-gray-50: #f2f2f2;
+$color-gray-100: #e6e6e6;
+$color-gray-1100: #1F2022;
+/**
+  * @tokens-end
+*/
+
+.color-background-primary-neutral {
+    background: $color-background-primary-neutral;
+    color: palette.$color-white;
+    &:hover {
+        background: $color-gray-1100;
+        color: $color-gray-0;
+    }
+    &-inverse {
+        background: palette.$color-white;
+        color: $color-background-primary-neutral; 
+        &:hover {
+            background: $color-gray-0;
+            color: $color-gray-1100;
+        }
+    }
+}
+.color-background-secondary-neutral {
+    background: $color-background-primary-neutral;
+    color: $color-gray-50;
+    &:hover {
+        background: $color-gray-1100;
+        color: $color-gray-100;
+    }
+    &-inverse {
+        background: $color-gray-50;
+        color: $color-background-primary-neutral; 
+        &:hover {
+            background: $color-gray-100;
+            color: $color-gray-1100;
+        }
+    }
+}
+
+.color-background-primary {
+    background: $color-background-primary;
+    color: palette.$color-white;
+    &:hover {
+        background: palette.$color-primary;
+        color: $color-background-fourth;
+    }
+    &-inverse {
+        background: palette.$color-white;
+        color: $color-background-primary; 
+        &:hover {
+            background: $color-background-fourth;
+            color: palette.$color-primary;
+        }
+    }
+}
+
+.color-background-secondary {
+    background: $color-background-secondary;
+    color: $color-background-fourth;
+    &:hover {
+        background: $color-background-tertiary;
+        color: palette.$color-blue-50;
+    }
+    &-inverse {
+        background: $color-background-fourth; 
+        color: $color-background-secondary;
+        &:hover {
+            background: palette.$color-blue-50;
+            color: $color-background-tertiary;
+        }
+    }
+}
+

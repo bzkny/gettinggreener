@@ -1,0 +1,70 @@
+@use '../../../sass/helpers';
+@use '../../../sass/borders';
+@use '../../../sass/palette';
+@use '../../../sass/sizes';
+
+.btn {
+    height: 63px;
+    padding: sizes.$padding-s sizes.$padding-m;
+    background: palette.$color-action-primary;
+    color: palette.$color-action-primary-text;
+
+    &:hover, .hover {
+        background: palette.$color-action-primary-hover;
+    }
+    &:active, .active {
+        background: palette.$color-action-primary-active;
+    }
+    &:disabled, .disabled{
+        background: helpers.disabled();
+    }
+    &-inverse {
+        background: palette.$color-white;
+        color: palette.$color-action-primary-inverse-text;
+
+        &:hover, .hover {
+            background: palette.$color-action-primary-inverse-hover;
+        }
+        &:active, .active {
+            background: palette.$color-action-primary-inverse-active;
+        }
+    }
+}
+
+.btn-secondary {
+    height: 63px;
+    padding: sizes.$padding-s sizes.$padding-m;
+
+    @include borders.border();
+    background: none;
+    color: palette.$color-action-secondary-text;
+
+    &:hover, .hover {
+        background: palette.$color-action-secondary-hover;
+        color: palette.$color-action-secondary-text-hover;
+    }
+    &:active, .active {
+        background: palette.$color-action-secondary-active;
+        color: palette.$color-action-secondary-text-active;
+    }
+    &:disabled, .disabled{
+        background: helpers.disabled();
+    }
+    &-inverse {
+        background: none;
+        color: palette.$color-action-secondary-inverse-text;
+
+        @include borders.border($color: palette.$color-action-secondary-inverse-border);
+
+        &:hover, .hover {
+            background: palette.$color-action-secondary-inverse-hover;
+        }
+        &:active, .active {
+            background: palette.$color-action-secondary-inverse-active;
+        }
+    }
+}
+
+.btn-link, a.link {
+    content: "test";
+}

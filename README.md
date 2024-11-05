@@ -63,3 +63,10 @@ npm start
 7. Go to Configuration tab and select all STOREFRONT api scopes. (Note: you do NOT need Admin api scopes- you ONLY want Storefront scopes).
 
 8. Take the "Storefront API Access Token" from shopify dashboard and replace "PUBLIC_STOREFRONT_API_TOKEN" in the .env file
+
+Dev notes:
+1. NPM install
+2. To compile theme: `sass sass/:css/ --watch`
+3. To compile both theme css and component css to their respective folders:  `npm run sass`
+4. To build & run Storybook: `npm run storybook`
+5. To run chromatic npm run chromatic

@@ -1,0 +1,88 @@
+import { DesignTokenDocBlock } from "storybook-design-token";
+import { Meta, Color } from "@storybook/blocks";
+
+<Meta title="Tokens/Borders" />
+
+<style> 
+{`
+.card {
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+}
+`}
+</style>
+
+
+# Border Colors
+
+#### SASS Color Tokens
+
+<DesignTokenDocBlock categoryName="Borders" maxHeight={600} viewType="table" />
+
+#### Examples
+Border Brand
+<div className="grid-section">
+    <div className="col-half card border-primary-brand">
+        <h5>Border Primary Brand</h5>
+        <p>Add .border-primary-brand to border element</p>
+    </div>
+     <div className="col-half card border-tertiary-brand">
+        <h5>Border Tertiary Brand</h5>
+        <p>Add .border-tertiary-brand to border element</p>
+    </div>
+</div>
+
+<div className="grid-section color-background-primary">
+    <div className="col-half card border-primary-brand-inverse">
+        <h5>Border Brand Primary Inverse</h5>
+        <p>Add .border-primary-brand-inverse to border element</p>
+    </div>
+    <div className="col-half card border-tertiary-brand-inverse">
+        <h5>Border Brand Tertiary Inverse</h5>
+        <p>Add .border-tertiary-brand-inverse to border element</p>
+    </div>
+</div>
+
+Border Neutral
+<div className="grid-section">
+    <div className="col-half card border-primary-neutral">
+        <h5>Border Primary Neutral</h5>
+        <p>Add .border-primary-neutral to parent container</p>
+    </div>
+    <div className="col-half card border-tertiary-neutral">
+        <h5>Border Tertiary Neutral</h5>
+        <p>Add .border-tertiary-neutral to parent container</p>
+    </div>
+</div>
+
+Border Disabled - Brand & Neutral
+<div className="grid-section">
+    <div className="col-half card border-primary-brand disabled">
+        <h5>Border Brand Disabled</h5>
+        <p>Add .disabled immediately following border-color-any class class</p>
+    </div>
+    <div className="col-half card border-primary-neutral disabled">
+        <h5>Border Neutral Disabled</h5>
+        <p>Add .disabled immediately following border-color-any class</p>
+    </div>
+</div>
+
+#### Code Snippets
+<p>There is a mixin available for borders as well as helper classes.</p>
+
+Mixin:
+```
+@mixin border($width: 2px, $style: solid, $color:palette.$color-tertiary) {
+    border: $width $style $color;
+}
+```
+
+Classes:
+```
+.border-primary-brand {
+  @include border();
+}
+```
+
+#### Accessibility
