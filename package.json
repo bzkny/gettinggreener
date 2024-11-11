@@ -12,10 +12,10 @@
       "format": "prettier --write --ignore-unknown .",
       "format:check": "prettier --check --ignore-unknown .",
       "typecheck": "tsc --noEmit",
-      "storybook": "storybook dev -p 6006",
+      "storybook": "cd designSystem && storybook dev -p 6006",
       "build-storybook": "storybook build",
       "chromatic": "npx chromatic --project-token=chpt_6c36c87e1db29d9",
-      "sass": "sass sass/:css/ stories/components/:stories/components/ --watch"
+      "sass": "sass designSystem/sass/:designSystem/css/ designSystem/stories/components/:designSystem/stories/components/ --watch"
     },
     "browserslist": [
       "defaults"

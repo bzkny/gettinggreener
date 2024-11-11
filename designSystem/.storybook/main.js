@@ -13,7 +13,7 @@ const config = {
     {name: "storybook-design-token", options: { preserveCSSVars: true }},
   ],
   framework: {
-    name: "@storybook/html-webpack5",
+    name: "@storybook/react-webpack5",
     options: {},
   },
   staticDirs: [

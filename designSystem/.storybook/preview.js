@@ -16,7 +16,7 @@ const preview = {
     },
     options: {
       storySort: {
-        order: ['Intro to Hill`s Design System', 'Tokens', ['Borders', 'Breakpoints', 'Colors', ['Brand', 'Backgrounds'], 'Grid', 'Sizes', 'Typography'], 'Components']
+        order: ['Intro to GG`s Design System', 'Tokens', ['Borders', 'Breakpoints', 'Colors', ['Brand', 'Backgrounds'], 'Grid', 'Sizes', 'Typography'], 'Components']
       }
     }
   },
