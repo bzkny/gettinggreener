@@ -13,8 +13,8 @@
       "format:check": "prettier --check --ignore-unknown .",
       "typecheck": "tsc --noEmit",
       "storybook": "cd designSystem && storybook dev -p 6006",
-      "build-storybook": "storybook build",
-      "chromatic": "npx chromatic --project-token=chpt_6c36c87e1db29d9",
+      "build-storybook": "cd designSystem && storybook build",
+      "chromatic": "cd designSystem && npx chromatic --project-token=chpt_6c36c87e1db29d9",
       "sass": "sass designSystem/sass/:designSystem/css/ designSystem/stories/components/:designSystem/stories/components/ --watch"
     },
     "browserslist": [
