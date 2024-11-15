@@ -1,4 +1,4 @@
-/** @type { import('@storybook/html-webpack5').StorybookConfig } */
+/** @type { import('@storybook/react-webpack5').StorybookConfig } */
 
 const { ClassNames } = require('@storybook/theming');
 
